@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/ericzhang-cn/rss2epub.png)](https://travis-ci.org/ericzhang-cn/rss2epub)
-
 将RSS内容转为epub格式电子书的工具
 
 # 使用方法
@@ -11,26 +9,18 @@
   mvn package
   ```
 
-  完成项目的编译，此时编译好的rss2epub会放在target目录下，而相关依赖会被自动拷贝到target/lib下
+  完成项目的编译，此时编译好的rss2epub会放在target目录下。
 
 - 工具的使用方法为
 
   ```bash
-  java -cp 依赖jar包 org.codinglabs.rss2epub.RssToEpub 配置文件 输出文件
+  java -jar rss2epub-jar包  配置文件 输出文件
   ```
 
   例如在rss2epub目录下执行
 
-  Linux&Mac：
-
   ```bash
-  java -cp 'target/lib/*:target/rss2epub-0.0.1-SNAPSHOT.jar' org.codinglabs.rss2epub.RssToEpub book.yml book.epub
-  ```
-
-  Windows：
-
-  ```bash
-  java -cp target/lib/*;target/rss2epub-0.0.1-SNAPSHOT.jar org.codinglabs.rss2epub.RssToEpub book.yml book.epub
+  java -jar target/rss2epub-0.0.1-SNAPSHOT-all.jar book.yml book.epub
   ```
 
   会在当前目录生成一本名叫book.epub的电子书。
