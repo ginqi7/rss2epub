@@ -1,61 +1,66 @@
-将RSS内容转为epub格式电子书的工具
+[![README-简体中文](https://img.shields.io/badge/README-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-555555.svg)](https://github.com/ginqi7/rss2epub/blob/master/README.zh-CN.md)
 
-# 使用方法
 
-- rss2epub使用[maven](http://maven.apache.org)构建，请先安装maven。
-- 在rss2pub目录下运行
+A tool that converts RSS content into ePub format ebooks.
+
+# Usage
+
+- Build rss2epub using [Maven](http://maven.apache.org). Please install Maven beforehand.
+- Execute the command in the rss2pub directory.
 
   ```bash
   mvn package
   ```
 
-  完成项目的编译，此时编译好的rss2epub会放在target目录下。
+The rss2epub JAR package is compiled in the target directory after building.
 
-- 工具的使用方法为
+- Instructions for using the package:
 
   ```bash
-  java -jar rss2epub-jar包  配置文件 输出文件
+  java -jar rss2epub.jar config-file output-file
   ```
 
-  例如在rss2epub目录下执行
+For instance, run the command in the rss2epub directory:
 
   ```bash
   java -jar target/rss2epub-0.0.1-SNAPSHOT-all.jar book.yml book.epub
   ```
 
-  会在当前目录生成一本名叫book.epub的电子书。
 
-# 配置文件
+It will generate an eBook titled book.epub.
 
-rss2epub的配置文件使用[YAML](http://www.yaml.org)格式。配置文件结构如下
+# Configuration
+
+The configuration type used in rss2epub is [YAML](http://www.yaml.org). The structure is:
 
 ```bash
-title: 电子书标题
-author: 电子书作者
-image: 是否抓取图片
+title: The title of eBook
+author: The author of eBook
+image: If fetching online images
 feeds:
-    - Feed源URL
-    - Feed源URL
+    - Feed URL
+    - Feed URL
     ...
-    - Feed源URL
+    - Feed URL
 ```
 
-具体可以参考项目根目录下的book.yml。
+You can refer to the book.yml file located in the project's root directory.
 
-# 功能特点
+# Features
 
-- 轻量级，易于使用。
-- 自动处理图片。
-- 自动生成索引。
-- 纯命令行工具，不依赖其它电子书管理工具，方便与其它脚本配合使用。
+- Lightweight and easy to use.
+- Automatic image processing.
+- Automatically generate index.
+- A pure command-line tool that does not rely on other eBook management tools, making it convenient for integration with other scripts.
 
-# 依赖项目
+# Dependencies
 
-- [Log4j](http://logging.apache.org/log4j/1.2/) - 日志库
-- [SnakeYAML](https://code.google.com/p/snakeyaml/) - 用于解析YAML文件
-- [Rome](https://rometools.jira.com/wiki/display/ROME/Home) - 用于读取和解析RSS源
-- [Epublib](http://www.siegmann.nl/epublib) - 用于生成epub格式电子书(已经不维护了)
+- [Log4j](http://logging.apache.org/log4j/1.2/) - Logging Library
+- [SnakeYAML](https://code.google.com/p/snakeyaml/) - A library for parsing YAML files.
+- [Rome](https://rometools.jira.com/wiki/display/ROME/Home) - A tool for reading and parsing RSS feeds.
+- [Epublib](http://www.siegmann.nl/epublib) - A tool for generating EPUB format eBooks (no longer maintained).
 - [epub4j](https://github.com/documentnode/epub4j) A java library for reading/writing/manipulating EPUB files, with improvements based on epublib.
 
-Maven会自动处理这些依赖，因此你在编译和运行程序时不需显式关心依赖项目。
-此处列出仅表示对这些项目的感谢。
+Maven automatically handles these dependencies, so you don't need to explicitly manage them when compiling and running your program.
+
+This list is solely an expression of gratitude for these items.
