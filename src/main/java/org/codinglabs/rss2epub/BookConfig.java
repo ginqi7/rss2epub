@@ -1,64 +1,69 @@
 package org.codinglabs.rss2epub;
 
 public class BookConfig {
-    /**
-     * Book title
-     */
-    private String title;
-    /**
-     * Book author
-     */
-    private String author;
-    /**
-     * Include images
-     */
-    private boolean image;
-    /**
-     * Book cover image
-     */
-    private String cover;
-    /**
-     * Feed urls
-     */
-    private String[] feeds;
+  /** Book title */
+  private String title;
 
-    public String getTitle() {
-        return title;
-    }
+  /** Book author */
+  private String author;
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  /** Include images */
+  private boolean image;
 
-    public String getAuthor() {
-        return author;
-    }
+  /** Book cover image */
+  private String cover;
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
+  /** Feed urls */
+  private String[] feeds;
 
-    public boolean isImage() {
-        return image;
-    }
+  /** If the entries are sorted in reverse order. */
+  private boolean reversed;
 
-    public void setImage(boolean image) {
-        this.image = image;
-    }
+  public boolean isReversed() {
+    return reversed;
+  }
 
-    public String getCover() {
-        return cover;
-    }
+  public void setReversed(boolean reversed) {
+    this.reversed = reversed;
+  }
 
-    public void setCover(String cover) {
-        this.cover = cover;
-    }
+  public String getTitle() {
+    return title;
+  }
 
-    public String[] getFeeds() {
-        return feeds;
-    }
+  public void setTitle(String title) {
+    this.title = title;
+  }
 
-    public void setFeeds(String[] feedUrls) {
-        this.feeds = feedUrls;
-    }
+  public String getAuthor() {
+    return author;
+  }
+
+  public void setAuthor(String author) {
+    this.author = author;
+  }
+
+  public boolean isImage() {
+    return image;
+  }
+
+  public void setImage(boolean image) {
+    this.image = image;
+  }
+
+  public String getCover() {
+    return cover;
+  }
+
+  public void setCover(String cover) {
+    this.cover = cover;
+  }
+
+  public String[] getFeeds() {
+    return feeds;
+  }
+
+  public void setFeeds(String[] feedUrls) {
+    this.feeds = feedUrls;
+  }
 }

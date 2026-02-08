@@ -24,6 +24,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.log4j.Logger;
@@ -143,9 +144,10 @@ public class BookMaker {
         log.warn("Get \"" + feed.getLink() + "\" Failed");
         continue;
       }
-
       @SuppressWarnings("rawtypes")
-      Iterator iter = feed.getEntries().iterator();
+      List entries = config.isReversed() ? feed.getEntries().reversed() : feed.getEntries();
+      @SuppressWarnings("rawtypes")
+      Iterator iter = entries.iterator();
 
       int articleNum = 1;
       while (iter.hasNext()) {

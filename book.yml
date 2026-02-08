@@ -1,6 +1,7 @@
-title: Feeds to eBook # 标题
+title: Derek Sivers Blog # 标题
 author: rss2epub # 作者
 image: true # 是否包含图片
 cover: cover.jpg # 封面图片
+reversed: true
 feeds: # RSS源
-  - https://manateelazycat.github.io/feed.xml
+  - https://sive.rs/en.atom
